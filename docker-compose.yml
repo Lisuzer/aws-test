@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nodejs
+    container_name: nodejs
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      PORT: 7777
+      AWS_BUCKET_NAME: test-bucket-ders
+      AWS_BUCKET_REGION: us-east-1
+      AWS_ACCESS_KEY: AKIAT3MEZCQL662XWS6Q
+      AWS_SECRET_KEY: 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
+    ports:
+      - "7777:7777"
